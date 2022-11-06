@@ -1,0 +1,124 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Josefin Sans";
+}
+html {
+  font-size: 62.5%;
+}
+body {
+  width: 100%;
+  height: 100vh;
+  background: linear-gradient(
+      to right,
+      rgba(0, 0, 0, 0.726),
+      rgba(0, 0, 0, 0.452)
+    ),
+    url(images/img--1.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  color: #fafafa;
+  display: grid;
+  justify-items: center;
+  place-items: center;
+  text-align: center;
+}
+.login-container {
+  position: relative;
+  display: grid;
+  gap: 2.5rem;
+  border-radius: 1.8rem;
+  animation: moveInBottom 0.6s ease-in-out;
+}
+.login-container::before {
+  content: "";
+  width: 100%;
+  height: 100%;
+  border-radius: 1.8rem;
+  background-color: rgba(0, 0, 0, 0.67);
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  transform: scaleX(3) scaleY(2);
+  box-shadow: 0 0.05rem 0.8rem rgba(255, 255, 255, 0.158);
+}
+.user--icon {
+  font-size: 6.6rem;
+}
+.make-form-have-space-no-margin {
+  display: grid;
+  gap: 0.8rem;
+  justify-items: center;
+}
+input,
+input:active,
+input:hover {
+  font-size: 1.85rem;
+  border-radius: 10rem;
+  outline: none;
+  border: none;
+  padding: 0.9rem 6rem 0.9rem 1.2rem;
+}
+input:hover {
+  transition: 0.3s ease-in-out;
+  transform: scaleX(1.05) scaleY(1.02);
+}
+
+input[type="submit"] {
+  padding: 1rem 1.5rem;
+  background-color: #000;
+  color: #fafafa;
+  box-shadow: 0 0.065rem 0.4rem rgba(255, 255, 255, 0.13);
+  cursor: pointer;
+}
+
+input[type="submit"]:hover {
+  transition: 0.3s ease-in-out;
+  transform: translateY(-0.3rem);
+  box-shadow: 0 0.2rem 0.6rem rgba(255, 255, 255, 0.158);
+}
+input[type="submit"]:active {
+  transition: 0.115s ease-in-out;
+  transform: translateY(-0.12rem);
+  box-shadow: 0 0.12rem 0.4rem rgba(255, 255, 255, 0.103);
+}
+
+/* Animation and keyframes */
+@keyframes moveInBottom {
+  0% {
+    opacity: 0;
+    transform: translateY(-3rem);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
+}
+
+/* media query */
+@media screen and (max-width: 760px) {
+  .login-container::before {
+    transition: 0.18s ease-in-out;
+    transform: scaleX(1.35) scaleY(1.3);
+  }
+  .login-container {
+    /* animation: rotate 0.4s ease-in-out; */
+  }
+}
+@keyframes rotate {
+  0% {
+    opacity: 0;
+    transform: rotate(90deg);
+  }
+  10% {
+    opacity: 0.1;
+    transform: rotate(170deg);
+  }
+  100% {
+    opacity: 1;
+    transform: rotate(0);
+  }
+}
